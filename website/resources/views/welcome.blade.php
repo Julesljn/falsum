@@ -13,7 +13,7 @@
 <body>
     <main class="w-full flex items-center justify-center h-screen">
         <div class="main"></div>
-        <form id="questionForm" class="flex flex-col w-full items-center justify-center gap-24" method="POST" action="{{ route('gemini.submit') }}">
+        <form id="questionForm" class="flex flex-col w-full items-center justify-center gap-24" method="POST" action="{{ route('llm.submit') }}">
             @csrf
             <h1 class="questionh1 text-white text-3xl">Question : Quel sont les principes du MVC ?</h1>
             <div class="flex w-full items-center justify-around">
@@ -31,7 +31,7 @@
                 class="bg-[#202830] text-white px-10 py-5 rounded-2xl transform hover:scale-110 transition duration-200">Envoyer</button>
         </form>
     </main>
-    @vite('resources/js/gemini.js')
+    @vite('resources/js/llm.js')
 </body>
 
 </html>

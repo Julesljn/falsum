@@ -124,8 +124,9 @@ return [
     ],
 
     'aliases' => [
-        'GeminiService' => App\Facades\GeminiServiceFacade::class,
+        'LlmFacade' => App\Facades\LlmFacade::class,
     ],
+
 
 
 ];

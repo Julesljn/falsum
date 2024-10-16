@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\GeminiInputRequest;
-use GeminiService;
+use LlmFacade;
 
-class GeminiController extends Controller
+class LlmController extends Controller
 {
     public function geminiResponse(GeminiInputRequest $request)
     {
         $content = $request->input('questionInput');
-        
-        $responseText = GeminiService::generateContentFromInput($content);
+
+        $responseText = LlmFacade::generateContentFromInput($content);
         return response()->json(['text' => $responseText]);
     }
 }

@@ -17,14 +17,14 @@ namespace App\Facades {
             /**
      * 
      *
-     */        class GeminiServiceFacade {
+     */        class LlmFacade {
                     /**
          * 
          *
          * @static 
          */        public static function generateContentFromInput($input)
         {
-                        /** @var \App\Services\GeminiService $instance */
+                        /** @var \App\Services\LlmService $instance */
                         return $instance->generateContentFromInput($input);
         }
             }
@@ -103,7 +103,7 @@ namespace Illuminate\Http {
 
 
 namespace  {
-            class GeminiService extends \App\Facades\GeminiServiceFacade {}
+            class LlmFacade extends \App\Facades\LlmFacade {}
     }
 
 

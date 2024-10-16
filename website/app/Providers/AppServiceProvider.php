@@ -3,14 +3,14 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Services\GeminiService;
+use App\Services\LlmService;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton('gemini-service', function ($app) {
-            return new GeminiService();
+        $this->app->singleton('Llm-service', function ($app) {
+            return new LlmService();
         });
     }
 

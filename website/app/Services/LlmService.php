@@ -5,7 +5,7 @@ namespace App\Services;
 use Gemini\Laravel\Facades\Gemini;
 
 
-class GeminiService
+class LlmService
 {
     public function generateContentFromInput(string $input)
     {
