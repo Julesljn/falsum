@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QuestionController;
-
+use App\Http\Controllers\GeminiController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::post('/api/ask', [QuestionController::class, 'ask']);
+
+Route::post('/submit', [GeminiController::class, 'geminiResponse'])->name('gemini.submit');
