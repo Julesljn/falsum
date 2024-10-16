@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(data => {
         responseInput.value = data.text;
-
         questionInput.classList.add('textareaActif');
+        questionInput.disabled = true;
         responseInput.classList.add('textareaActif');
       })
       .catch(error => {

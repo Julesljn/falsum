@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use Illuminate\Http\Request;
 use Gemini\Laravel\Facades\Gemini;
 
 

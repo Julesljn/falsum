@@ -3,21 +3,18 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Services\GeminiService;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
-    public function register(): void
+    public function register()
     {
-        //
+        $this->app->singleton('geminiService', function ($app) {
+            return new GeminiService();
+        });
     }
 
-    /**
-     * Bootstrap any application services.
-     */
-    public function boot(): void
+    public function boot()
     {
         //
     }
