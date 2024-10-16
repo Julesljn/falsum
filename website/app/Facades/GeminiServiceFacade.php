@@ -8,6 +8,6 @@ class GeminiServiceFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'geminiService';
+        return 'gemini-service';
     }
 }

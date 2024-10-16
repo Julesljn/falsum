@@ -9,7 +9,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton('geminiService', function ($app) {
+        $this->app->singleton('gemini-service', function ($app) {
             return new GeminiService();
         });
     }
