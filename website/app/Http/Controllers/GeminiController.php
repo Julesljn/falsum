@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GeminiInputRequest;
 use Gemini\Laravel\Facades\Gemini;
 use App\Services\GeminiService;
 use Illuminate\Http\Request;
@@ -14,11 +15,8 @@ class GeminiController extends Controller
         $this->geminiService = $geminiService;
     }
 
-    public function geminiResponse()
+    public function geminiResponse(GeminiInputRequest $validated)
     {
-        $validated = request()->validate([
-            'questionInput' => 'required|string',
-        ]);
         $content = $validated['questionInput'];
 
         $responseText = $this->geminiService->generateContentFromInput($content);
