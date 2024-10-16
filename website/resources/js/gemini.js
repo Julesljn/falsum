@@ -1,4 +1,5 @@
 const form = document.querySelector('#questionForm')
+const questionInput = document.querySelector('#questionInput');
 const responseInput = document.querySelector('#responseOutput');
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -23,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(data => {
         responseInput.value = data.text;
+
+        questionInput.classList.add('textareaActif');
+        responseInput.classList.add('textareaActif');
       })
       .catch(error => {
         console.error('Error :', error);

@@ -17,10 +17,10 @@ class GeminiController extends Controller
 
     public function geminiResponse(GeminiInputRequest $validated)
     {
-        $content = $validated['questionInput'];
-
+        $message = config('llm');
+        $content = $validated['questionInput'] . $message;
+        
         $responseText = $this->geminiService->generateContentFromInput($content);
-        $tt = 'salut';
         return response()->json(['text' => $responseText]);
     }
 }

@@ -40,3 +40,9 @@ textarea:focus {
   box-shadow: green 0px 3px 3px, green 0px 0px 3px 3px;
   transition: 1.5s
 }
+
+.textareaActif {
+  outline: none;
+  box-shadow: green 0px 3px 3px, green 0px 0px 3px 3px;
+  transition: 1.5s
+}
