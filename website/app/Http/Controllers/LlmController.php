@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\GeminiInputRequest;
+use App\Http\Requests\LlmInputRequest;
 use LlmFacade;
 
-class LlmController extends Controller
+class LlmController
 {
-    public function geminiResponse(GeminiInputRequest $request)
+    public function geminiResponse(LlmInputRequest $request)
     {
         $content = $request->input('questionInput');
 
