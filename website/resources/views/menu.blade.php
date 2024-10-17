@@ -44,14 +44,16 @@
         <section class="bg-[#0d1116] w-3/4 h-3/4 text-white flex items-center flex-col" style="display: flex">
             <h1 class="text-2xl text-center w-full border-b-2 border-[#3d444d] p-5">Catégorie</h1>
             <div class="flex flex-col items-center gap-24 mt-16">
-                <form action="">
+                <form action="{{ route('theme.delete') }}" method="POST">
+                    @csrf
+                    @method('DELETE') {{-- //!!\\ --}}
                     <select class="text-black p-1 px-6 py-2 cursor-pointer" name="theme" id="theme-select1">
                         <option value="">Catégorie</option>
                         @foreach ($themes as $theme)
                             <option value="{{ $theme->id }}">{{ $theme->theme }}</option>
                         @endforeach
                     </select>
-                    <button class="ml-9 px-6 py-2 rounded-xl bg-red-700 hover:bg-red-800">Supprimer</button>
+                    <button type="submit" class="ml-9 px-6 py-2 rounded-xl bg-red-700 hover:bg-red-800">Supprimer</button>
                 </form>
                 <form id="theme-form" action="{{ route('themes.store') }}" method="POST" data-url="{{ route('themes.store') }}">
                     @csrf

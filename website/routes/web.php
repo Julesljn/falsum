@@ -17,3 +17,4 @@ Route::post('/submit', [LlmController::class, 'geminiResponse'])->name('llm.subm
 Route::get('/', [ThemeController::class, 'index'])->name('menu');
 
 Route::post('/themes', [ThemeController::class, 'store'])->name('themes.store');
+Route::delete('/themes/delete', [ThemeController::class, 'delete'])->name('theme.delete');
