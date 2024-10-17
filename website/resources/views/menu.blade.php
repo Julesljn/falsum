@@ -23,6 +23,17 @@
     <main class="w-full p-12">
         <section class="bg-[#0d1116] w-3/4 h-3/4 text-white flex items-center flex-col" style="display: flex">
             <h1 class="text-2xl text-center w-full border-b-2 border-[#3d444d] p-5">Démarrer</h1>
+            <div class="flex flex-col items-center gap-24 mt-16">
+                <div>
+                    <span class="text-xl mr-5">Thème :</span>
+                    <select class="text-black p-1" name="theme">
+                        <option value="">Choisissez un thème</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="px-16 py-4 rounded-xl bg-[#202830] hover:bg-[#313c47] hover:cursor-pointer   ">Lancer</button>
+                </div>
+            </div>
         </section>
 
         <section class="bg-[#0d1116] w-3/4 h-3/4 text-white flex items-center flex-col" style="display: none">
