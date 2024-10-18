@@ -15,4 +15,11 @@ class WordController
         ]);
         return response()->json(['word' => $word], 200);
     }
+    public function delete($id)
+    {
+        $word = Word::findOrFail($id);
+        $word->delete();
+
+        return redirect()->back();
+    }
 }

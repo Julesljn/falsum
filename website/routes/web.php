@@ -23,3 +23,4 @@ Route::post('/theme', [ThemeController::class, 'store'])->name('theme.store');
 Route::delete('/theme/delete', [ThemeController::class, 'delete'])->name('theme.delete');
 
 Route::post('/word', [WordController::class, 'store'])->name('word.store');
+Route::delete('/word/{id}', [WordController::class, 'delete'])->name('word.delete');

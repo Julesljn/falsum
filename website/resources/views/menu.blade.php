@@ -67,7 +67,7 @@
             <h1 class="text-2xl text-center w-full border-b-2 border-[#3d444d] p-5">Question</h1>
         </section>
 
-        <section class="bg-[#0d1116] w-3/4 min-h-3/4 text-white flex items-center flex-col" style="display: flex">
+        <section class="bg-[#0d1116] w-3/4 min-h-[67.7vh] h-auto text-white flex items-center flex-col" style="display: flex">
             <h1 class="text-2xl text-center w-full border-b-2 border-[#3d444d] p-5">Mot</h1>
             <form id="word-form" action="{{ route('word.store') }}" method="POST" class="mt-16" data-url="{{ route('word.store') }}">
                 @csrf
@@ -79,7 +79,13 @@
                     @foreach ($words as $word)
                     <li class="p-4 bg-[#202830] flex items-center gap-3">
                         <p>{{ $word->word }}</p>
-                        <a href=""><img class="w-[30px] h-[30px]" src="{{ asset('medias/images/croix.png') }}" alt="Croix"></a>
+                        <form action="{{ route('word.delete', $word->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">
+                                <img class="w-[30px] h-[30px]" src="{{ asset('medias/images/croix.png') }}" alt="Croix">
+                            </button>
+                        </form>
                     </li>
                     @endforeach
                 </ul>
