@@ -9,11 +9,6 @@ use App\Http\Requests\DeleteTheme;
 
 class ThemeController
 {
-    public function index()
-    {
-        $themes = Theme::all();
-        return view('menu', compact('themes'));
-    }
     public function store(StoreTheme $request)
     {
         $theme = Theme::create([

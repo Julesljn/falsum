@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LlmController;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\WordController;
 
 Route::get('/', function () {
     return view('menu');
@@ -14,7 +16,10 @@ Route::get('/question', function () {
 
 Route::post('/submit', [LlmController::class, 'geminiResponse'])->name('llm.submit');
 
-Route::get('/', [ThemeController::class, 'index'])->name('menu');
+Route::get('/', [MenuController::class, 'index'])->name('menu');
+Route::get('/', [MenuController::class, 'index'])->name('menu');
 
-Route::post('/themes', [ThemeController::class, 'store'])->name('themes.store');
-Route::delete('/themes/delete', [ThemeController::class, 'delete'])->name('theme.delete');
+Route::post('/theme', [ThemeController::class, 'store'])->name('theme.store');
+Route::delete('/theme/delete', [ThemeController::class, 'delete'])->name('theme.delete');
+
+Route::post('/word', [WordController::class, 'store'])->name('word.store');

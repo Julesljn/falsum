@@ -41,7 +41,7 @@
             </div>
         </section>
 
-        <section class="bg-[#0d1116] w-3/4 h-3/4 text-white flex items-center flex-col" style="display: flex">
+        <section class="bg-[#0d1116] w-3/4 h-3/4 text-white flex items-center flex-col" style="display: none">
             <h1 class="text-2xl text-center w-full border-b-2 border-[#3d444d] p-5">Catégorie</h1>
             <div class="flex flex-col items-center gap-24 mt-16">
                 <form action="{{ route('theme.delete') }}" method="POST">
@@ -55,7 +55,7 @@
                     </select>
                     <button type="submit" class="ml-9 px-6 py-2 rounded-xl bg-red-700 hover:bg-red-800">Supprimer</button>
                 </form>
-                <form id="theme-form" action="{{ route('themes.store') }}" method="POST" data-url="{{ route('themes.store') }}">
+                <form id="theme-form" action="{{ route('theme.store') }}" method="POST" data-url="{{ route('theme.store') }}">
                     @csrf
                     <input id="theme" name="theme" class="text-black px-6 py-2" type="text" placeholder="Nom catégorie">
                     <button type="submit" class="ml-9 px-6 py-2 rounded-xl bg-green-700 hover:bg-green-800">Ajouter</button>
@@ -67,8 +67,23 @@
             <h1 class="text-2xl text-center w-full border-b-2 border-[#3d444d] p-5">Question</h1>
         </section>
 
-        <section class="bg-[#0d1116] w-3/4 h-3/4 text-white flex items-center flex-col" style="display: none">
+        <section class="bg-[#0d1116] w-3/4 min-h-3/4 text-white flex items-center flex-col" style="display: flex">
             <h1 class="text-2xl text-center w-full border-b-2 border-[#3d444d] p-5">Mot</h1>
+            <form id="word-form" action="{{ route('word.store') }}" method="POST" class="mt-16" data-url="{{ route('word.store') }}">
+                @csrf
+                <input name="word" id="word-input" class="text-black px-6 py-2" type="text" placeholder="Mot">
+                <button class="ml-9 px-6 py-2 rounded-xl bg-green-700 hover:bg-green-800" type="submit">Ajouter</button>
+            </form>
+            <div class="w-full mt-16 p-6">
+                <ul class="flex gap-10 flex-wrap">
+                    @foreach ($words as $word)
+                    <li class="p-4 bg-[#202830] flex items-center gap-3">
+                        <p>{{ $word->word }}</p>
+                        <a href=""><img class="w-[30px] h-[30px]" src="{{ asset('medias/images/croix.png') }}" alt="Croix"></a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
         </section>
 
     </main>
