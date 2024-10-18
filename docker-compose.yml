@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    ports:
+      - '8000:80'
+    volumes:
+      - ./website:/var/www/html
+    networks:
+      - app-network
+    depends_on:
+      - npm
+
+  npm:
+    image: node:14
+    working_dir: /var/www/html
+    volumes:
+      - ./website:/var/www/html
+    command: ["npm", "run", "dev"]
+    networks:
+      - app-network
+
+networks:
+  app-network:
