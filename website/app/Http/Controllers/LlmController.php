@@ -7,7 +7,7 @@ use LlmFacade;
 
 class LlmController
 {
-    public function geminiResponse(LlmInputRequest $request)
+    public function llmResponse(LlmInputRequest $request)
     {
         $content = $request->input('questionInput');
 

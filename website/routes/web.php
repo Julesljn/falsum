@@ -14,9 +14,8 @@ Route::get('/question', function () {
     return view('question');
 })->name('question');
 
-Route::post('/submit', [LlmController::class, 'geminiResponse'])->name('llm.submit');
+Route::post('/submit', [LlmController::class, 'llmResponse'])->name('llm.submit');
 
-Route::get('/', [MenuController::class, 'index'])->name('menu');
 Route::get('/', [MenuController::class, 'index'])->name('menu');
 
 Route::post('/theme', [ThemeController::class, 'store'])->name('theme.store');
